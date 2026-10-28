@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cookie 管理器</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="header">
+        <div class="logo" aria-hidden="true">🍪</div>
+        <div>
+          <h1>Cookie 管理器</h1>
+          <p>导出或导入当前网站的登录态</p>
+        </div>
+      </header>
+
+      <section class="site-card" aria-live="polite">
+        <span class="eyebrow">当前网站</span>
+        <strong id="domain">读取中…</strong>
+        <span id="page-url" class="muted"></span>
+      </section>
+
+      <section class="actions">
+        <button id="export" class="button primary" type="button" disabled>
+          <span class="button-icon">↓</span>
+          <span>导出 Cookie 文件</span>
+        </button>
+        <button id="import" class="button secondary" type="button" disabled>
+          <span class="button-icon">↑</span>
+          <span>导入 Cookie 文件</span>
+        </button>
+        <input id="file" type="file" accept="application/json,.json" hidden />
+      </section>
+
+      <p id="status" class="status" role="status"></p>
+
+      <footer class="hint">
+        <span class="hint-mark">i</span>
+        <span>导入前请先打开同一网站域名，导入后刷新页面。Cookie 文件包含登录凭证，请只分享给可信的人。</span>
+      </footer>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>
